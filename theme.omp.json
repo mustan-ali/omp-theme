@@ -5,7 +5,7 @@
       "alignment": "left",
       "segments": [
         {
-          "background": "#FF0000",
+          "background": "#baff29",
           "foreground": "#000000",
           "leading_diamond": "\ue0b6",
           "trailing_diamond": "\uE0B0",
@@ -17,8 +17,8 @@
           "type": "path"
         },
         {
-          "background": "#3498DB",
-          "foreground": "#000000",
+          "background": "#435058",
+          "foreground": "#baff29",
           "leading_diamond": "<transparent,background>\uE0B0</>",
           "trailing_diamond": "\uE0B0",
           "properties": {
@@ -29,13 +29,7 @@
           "type": "path"
         },
         {
-          "background": "#00FF00",
-          "background_templates": [
-            "{{ if or (.Working.Changed) (.Staging.Changed) }}#FFC600{{ end }}",
-            "{{ if and (gt .Ahead 0) (gt .Behind 0) }}#FFCC80{{ end }}",
-            "{{ if gt .Ahead 0 }}#B388FF{{ end }}",
-            "{{ if gt .Behind 0 }}#B388FF{{ end }}"
-          ],
+          "background": "#848c8e",
           "foreground": "#000000",
           "leading_diamond": "<transparent,background>\uE0B0</>",
           "trailing_diamond": "\uE0B0",
@@ -44,7 +38,7 @@
             "fetch_status": true
           },
           "style": "diamond",
-          "template": " {{ .HEAD }}{{ if .Staging.Changed }}<#FF6F00> \uf046 {{ .Staging.String }}</>{{ end }}{{ if and (.Working.Changed) (.Staging.Changed) }} |{{ end }}{{ if .Working.Changed }} \uf044 {{ .Working.String }}{{ end }}{{ if gt .StashCount 0 }} \ueb4b {{ .StashCount }}{{ end }} ",
+          "template": " {{ if .HEAD }}{{ .HEAD }}{{ else }}{{ end }}{{ if .Staging.Changed }}<#000000> \uf046 {{ .Staging.String }}</>{{ end }}{{ if and (.Working.Changed) (.Staging.Changed) }} |{{ end }}{{ if .Working.Changed }} \uf044 {{ .Working.String }}{{ end }}{{ if gt .StashCount 0 }} \ueb4b {{ .StashCount }}{{ end }} ",
           "type": "git"
         }
       ],
